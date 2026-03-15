@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dd4bm32ul0exg" path="res://assets/Sprites/floor_texture.png" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dsv5hjirr4oj1" path="res://assets/Player/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://d4nyx26cs8pkr" path="res://assets/Zombie/zombie.tscn" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -67,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1225052, 0, 0)
 shape = SubResource("BoxShape3D_tefeu")
 
 [node name="box3" type="StaticBody3D" parent="." unique_id=778635847]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.935846, 1.0939845, 12.877406)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.7035885, 1.0939845, 12.877406)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="box3" unique_id=471545744]
 material_override = SubResource("StandardMaterial3D_jyhfs")
@@ -87,4 +88,27 @@ mesh = SubResource("BoxMesh_tbgi4")
 shape = SubResource("BoxShape3D_tefeu")
 
 [node name="player" parent="." unique_id=211243684 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0199323, 5.2152157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0199323, 19.932678)
+SPEED = 5.0
+JUMP_VELOCITY = 4.5
+gravity = -9.8
+
+[node name="zombie" parent="." unique_id=2133139879 instance=ExtResource("3_sugp2")]
+
+[node name="zombie7" parent="." unique_id=585687502 instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, -5.997481)
+
+[node name="zombie6" parent="." unique_id=1470177396 instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, -9.351602)
+
+[node name="zombie5" parent="." unique_id=42693482 instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 9.202095, 0, -3.8256834)
+
+[node name="zombie4" parent="." unique_id=553624619 instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 6.6572866, 0, -1.4637156)
+
+[node name="zombie3" parent="." unique_id=1014014922 instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -6.8932104, 0, -7.2890525)
+
+[node name="zombie2" parent="." unique_id=1197348886 instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -3.7810264, 0, -3.922842)
