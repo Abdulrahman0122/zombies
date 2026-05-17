@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://dsv5hjirr4oj1"]
 
 [ext_resource type="Script" uid="uid://ch28pgj8xfi1g" path="res://assets/Player/player.gd" id="1_xg5j1"]
+[ext_resource type="PackedScene" uid="uid://c5h3x0vwfmahk" path="res://assets/Player/gun.tscn" id="2_qm3y6"]
+[ext_resource type="Texture2D" uid="uid://c3sbobrhxpp66" path="res://assets/Sprites/crosshair.png" id="3_7gujn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_is41o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xg5j1"]
 
-[node name="player" type="CharacterBody3D" unique_id=211243684]
+[sub_resource type="LabelSettings" id="LabelSettings_qm3y6"]
+font_size = 117
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="player" type="CharacterBody3D" unique_id=211243684 groups=["player"]]
 script = ExtResource("1_xg5j1")
-SPEED = null
-JUMP_VELOCITY = null
-gravity = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1094787562]
 mesh = SubResource("CapsuleMesh_is41o")
@@ -23,3 +27,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=323232178]
 current = true
+
+[node name="gun" parent="head/Camera3D" unique_id=1797033475 instance=ExtResource("2_qm3y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439, -0.394, -0.771)
+
+[node name="Label" type="Label" parent="head/Camera3D" unique_id=1045681264]
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 326.0
+offset_bottom = 160.0
+text = "40/40"
+label_settings = SubResource("LabelSettings_qm3y6")
+
+[node name="Label2" type="Label" parent="head/Camera3D" unique_id=39183004]
+modulate = Color(1, 0.53, 0.53, 1)
+offset_left = 73.0
+offset_top = 154.0
+offset_right = 386.0
+offset_bottom = 315.0
+text = "3/3"
+label_settings = SubResource("LabelSettings_qm3y6")
+
+[node name="TextureRect" type="TextureRect" parent="head/Camera3D" unique_id=1112034701]
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1024.0
+offset_bottom = 604.0
+texture = ExtResource("3_7gujn")
